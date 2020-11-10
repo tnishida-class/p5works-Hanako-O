@@ -1,21 +1,27 @@
-// ギリシャ国旗
+// アメリカ国旗
 function setup() {
-  const blue = color(0, 51, 160);
-  createCanvas(270, 180);
-  // noStroke();
-  background(255);
+  createCanvas(520, 260);
+  noStroke();
+  background(255, 255, 255);
+  let i = 0;
+  for(i = 0; i < 7; i ++){
+   fill(255, 0, 0);
+   rect(0, i * 40, 520, 20);
+}
+   fill(0, 0, 255);
+   rect(0, 0, 230, 140);
 
-  let d = height / 9; // 縞1本の太さ
+   star(10, 10, 10, 10)
 
-  for(let i = 0; i < 9; i++){
-    // BLANK[1] (hint: 縞の色を交互に変えるには2で割った余りを使おう)
-    rect(0, i * d, width, (i + 1) * d);
+   function star(cx, cy, r){
+  beginShape();    // 点つなぎを始める
+  for(let j = 0; j < 5; j++){
+    const theta = TWO_PI * j * 2 / 5 - HALF_PI;
+    const x = cx + cos(theta) * r;
+    const y = cy + sin(theta) * r;
+    vertex(x, y);  // 次につなぐ点を１つ増やす
   }
+  endShape(CLOSE); // 点つなぎを終わる
+}
 
-  fill(blue);
-  let size = d * 5;
-  rect(0, 0, size, size);
-
-  fill(255);
-  // BLANK[2] (hint: 白い十字を描くには rect を二つ描こう)
 }
