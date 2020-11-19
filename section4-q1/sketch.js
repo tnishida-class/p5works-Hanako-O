@@ -6,11 +6,19 @@ function setup(){
   createCanvas(200, 200);
   count = 0;
   cycle = 100;
+  size = 30;
 }
 
 function draw(){
   background(160, 192, 255);
   count = (count + 1) % cycle;
   // BLANK[1]
+  //size = count
   ellipse(width / 2, height / 2, size);
+  if(count <= 50){
+    size += 1
+  }
+  else{
+    size -= 1
+  }
 }
