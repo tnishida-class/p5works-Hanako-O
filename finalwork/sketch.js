@@ -12,8 +12,8 @@ function setup(){
   vx = 8;
   vy = 8;
   angle = 0;
-  f1 = color(0, 255, 255);
-  f2 = color(0, 0, 255);
+  f1 = color(0, 0, 255);
+  f2 = color(0, 255, 255);
   noStroke();
   for(var g = 200; g > 0; g -= 5){
     fill(lerpColor(f1, f2, g / 250));
